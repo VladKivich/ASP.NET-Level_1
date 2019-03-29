@@ -24,7 +24,7 @@ namespace WebStore.Controllers
         public IActionResult Details(int ID)
         {
             //var Employee = EmpList.FirstOrDefault(emp => emp.ID == ID);
-            var Employee = from emp in EmpList
+             var Employee = from emp in EmpList
                            where (emp.ID == ID)
                            select emp;
 
