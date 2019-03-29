@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebStore.Models.Employee>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width-device-width" charset="utf-8" />
+    <title>Стартовая страница</title>
+</head>
+<body>
+    <p>Employes List</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Post</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var emp in Model)
+            {
+            <tr>
+                <td>@emp.ID</td>
+                <td>@emp.FirstName</td>
+                <td>@emp.Post</td>
+                <td><a asp-controller="Employes" asp-action="Details" asp-route-id="@emp.ID">Employee Personal Info</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
