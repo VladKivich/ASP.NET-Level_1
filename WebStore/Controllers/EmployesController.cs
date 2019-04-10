@@ -34,7 +34,7 @@ namespace WebStore.Controllers
             Employee E;
             if (ID != null)
             {
-               E = EmpList.GetById((int)ID);
+                E = EmpList.GetById((int)ID);
                 if(E is null)
                 {
                     return NotFound(E);
@@ -72,6 +72,16 @@ namespace WebStore.Controllers
                 EmpList.AddNew(Emp);
             }
             EmpList.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int ID)
+        {
+            Employee E = EmpList.GetById(ID);
+            if(E != null)
+            {
+                EmpList.Delete(E);
+            }
             return RedirectToAction("Index");
         }
     }

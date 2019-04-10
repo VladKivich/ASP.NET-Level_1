@@ -16,9 +16,20 @@ namespace WebStore.Services
             new Employee(3, "Cindy", "C", EmployesPostsEnum.TopManager, 45, Gender.female)
         };
 
-        public void AddNew(Employee Emp) => EmpList.Add(Emp);
+        public void AddNew(Employee Emp)
+        {
+            int num = EmpList.Count;
+            Emp.ID = ++num;
+            EmpList.Add(Emp);
+        }
 
-        public void Delete(Employee Emp) => EmpList.Remove(Emp);
+        public void Delete(Employee Emp)
+        {
+            if(EmpList.Contains(Emp))
+            {
+                EmpList.Remove(Emp);
+            }
+        }
 
         public IEnumerable<Employee> GetAll() => EmpList;
 

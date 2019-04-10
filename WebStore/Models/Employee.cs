@@ -56,7 +56,7 @@ namespace WebStore.Models
             this.FirstName = "Unknown";
             this.LastName = "Unknown";
             this.Post = EmployesPostsEnum.Unknown;
-            this.Age = 0;
+            this.Age = 18;
             this.Gender = Gender.notspecified;
         }
     }
