@@ -1,33 +1,30 @@
 ﻿@model IEnumerable<WebStore.Models.Employee>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta name="viewport" content="width-device-width" charset="utf-8" />
-    <title>Стартовая страница</title>
-</head>
-<body>
-    <p>Employes List</p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Post</th>
-                <th>Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach(var emp in Model)
-            {
-            <tr>
-                <td>@emp.ID</td>
-                <td>@emp.FirstName</td>
-                <td>@emp.Post</td>
-                <td><a asp-controller="Employes" asp-action="Details" asp-route-id="@emp.ID">Employee Personal Info</a></td>
-            </tr>
-            }
-        </tbody>
-    </table>
-</body>
-</html>
+<h2>Employes List</h2>
+    <p>
+        Create New Employee
+        <a asp-controller="Employes" asp-action="Edit" class="btn btn-default">Create</a>
+    </p>
+    </p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Post</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+        <tr>
+            <td>@emp.ID</td>
+            <td>@emp.FirstName</td>
+            <td>@emp.Post</td>
+            <td><a asp-controller="Employes" asp-action="Details" asp-route-id="@emp.ID" class="btn btn-default">Personal Info</a></td>
+            <td><a asp-controller="Employes" asp-action="Edit" asp-route-id="@emp.ID" class="btn btn-default">Edit</a></td>
+            <td><a asp-controller="Employes" asp-action="Delete" asp-route-id="@emp.ID" class="btn btn-danger">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>

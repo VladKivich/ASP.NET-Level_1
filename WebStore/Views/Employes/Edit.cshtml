@@ -1,0 +1,50 @@
+﻿@using WebStore.Models
+@model WebStore.Models.Employee
+@{
+    ViewData["Title"] = $"Employee Editor";
+}
+
+<h2>Editor</h2>
+<p>Employee Card</p>
+
+<div>
+    <form method="post" asp-controller="Employes" asp-action="Edit">
+
+        <input asp-for="ID" type="hidden"/>
+
+        <div class="form-group">
+            <label asp-for="FirstName" class="form-label"></label>
+            <input asp-for="FirstName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName" class="form-label"></label>
+            <input asp-for="LastName" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Post" class="form-label"></label>
+            <select asp-for="Post" asp-items="@Html.GetEnumSelectList(typeof(EmployesPostsEnum))" class="form-control"></select>        
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Age" class="form-label"></label>
+            <input asp-for="Age" max="75" min="18" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Gender" class="form-label"></label>
+            <select asp-for="Gender" asp-items="@Html.GetEnumSelectList(typeof(Gender))" class="form-control">
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn-default" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <p><a asp-controller="Employes" asp-action="Index">Back to Employes List</a></p>
+</div>
+

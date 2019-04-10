@@ -1,36 +1,30 @@
-﻿@model WebStore.Models.Employee
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta name="viewport" content="width-device-width" charset="utf-8" />
-    <title>Employee Details</title>
-</head>
-<body>
-    <p>Employee Card</p>
-    <div>
-        <p>FirstName</p>
-        <p>@Model.FirstName</p>
-    </div>
-    <div>
-        <p>LastName</p>
-        <p>@Model.LastName</p>
-    </div>
-    <div>
-        <p>Age</p>
-        <p>@Model.Age</p>
-    </div>
-    <div>
-        <p>Gender</p>
-        <p>@Model.Gender</p>
-    </div>
-    <div>
-        <p>Post</p>
-        <p>@Model.Post</p>
-    </div>
-    <hr />
-    <div>
-        <p><a href="/Employes/Index">Back to Employes Table</a></p>
-    </div>
-</body>
-</html>
+﻿@{
+    Layout = "_Layout";
+}
+@model WebStore.Models.Employee
+<p>Employee Card</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Post</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.FirstName</td>
+            <td>@Model.LastName</td>
+            <td>@Model.Age</td>
+            <td>@Model.Gender</td>
+            <td>@Model.Post</td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <p><a href="/Employes/Index">Back to Employes List</a></p>
+</div>
 
