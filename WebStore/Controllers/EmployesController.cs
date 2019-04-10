@@ -24,10 +24,6 @@ namespace WebStore.Controllers
 
         public IActionResult Details(int ID)
         {
-            //var Employee = (from emp in EmpList
-            //               where (emp.ID == ID)
-            //               select emp).ToList();
-            
             var Employee =  EmpList.GetById(ID);
 
             return View(Employee);
