@@ -7,6 +7,7 @@ namespace WebStore.Models
 {
     public enum EmployesPostsEnum
     {
+        Unknown =0,
         Manager = 1,
         TopManager = 2,
         Worker = 3,
@@ -16,6 +17,7 @@ namespace WebStore.Models
 
     public enum Gender
     {
+        notspecified = 0,
         male = 1,
         female = 2
     }
@@ -31,7 +33,7 @@ namespace WebStore.Models
 
         public EmployesPostsEnum Post {get; set;}
 
-        public Gender Gender { get; private set; }
+        public Gender Gender { get; set; }
 
         public int Age { get; set; }
 
@@ -43,6 +45,16 @@ namespace WebStore.Models
             this.Post = Post;
             this.Age = Age;
             this.Gender = Gender;
+        }
+
+        public Employee()
+        {
+            this.ID = 0;
+            this.FirstName = "Unknown";
+            this.LastName = "Unknown";
+            this.Post = EmployesPostsEnum.Unknown;
+            this.Age = 0;
+            this.Gender = Gender.notspecified;
         }
     }
 }
