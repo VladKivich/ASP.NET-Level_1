@@ -1,13 +1,13 @@
 ﻿@model WebStore.Models.Employee
 @{
-    ViewData["Title"] = $"Employee Editor - ID:{Model.ID}";
+    ViewData["Title"] = $"Employee Editor";
 }
 
 <h2>Editor</h2>
 <p>Employee Card</p>
 
 <div>
-    <form method="post" asp-controller="Employes" asp-action="EmployeeEdit">
+    <form method="post" asp-controller="Employes" asp-action="Edit">
         <div asp-validation-summary="ModelOnly"></div>
         <div class="form-group">
             <label asp-for="FirstName" class="form-label"></label>

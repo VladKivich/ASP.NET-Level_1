@@ -33,7 +33,7 @@ namespace WebStore.Controllers
             return View(Employee);
         }
 
-        public IActionResult EmployeeEdit(int? ID)
+        public IActionResult Edit(int? ID)
         {
             Employee E;
             if (ID != null)
@@ -52,7 +52,7 @@ namespace WebStore.Controllers
         }
         
         [HttpPost]
-        public IActionResult EmployeeEdit(Employee Emp)
+        public IActionResult Edit(Employee Emp)
         {
             if(!ModelState.IsValid)
             {
