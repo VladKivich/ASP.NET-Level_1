@@ -37,14 +37,14 @@ namespace WebStore.Controllers
                E = EmpList.GetById((int)ID);
                 if(E is null)
                 {
-                    return NotFound();
+                    return NotFound(E);
                 }
             }
             else
             {
                 E = new Employee();
             }
-            return View();
+            return View(E);
         }
         
         [HttpPost]
@@ -52,7 +52,7 @@ namespace WebStore.Controllers
         {
             if(!ModelState.IsValid)
             {
-                return View();
+                return View(Emp);
             }
             else if(Emp.ID > 0)
             {

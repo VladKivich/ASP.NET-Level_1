@@ -37,6 +37,8 @@ namespace WebStore.Models
 
         public int Age { get; set; }
 
+        public string[] EnumString { get; set; }
+
         public Employee(int ID, string FirstName, string LastName, EmployesPostsEnum Post, int Age, Gender Gender)
         {
             this.ID = ID;
@@ -45,6 +47,7 @@ namespace WebStore.Models
             this.Post = Post;
             this.Age = Age;
             this.Gender = Gender;
+            EnumString = Enum.GetNames(typeof(Gender));
         }
 
         public Employee()
